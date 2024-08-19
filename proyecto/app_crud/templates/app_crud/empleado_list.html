@@ -1,0 +1,64 @@
+
+{% extends 'app_crud/principal.html' %}
+
+{% block content %}
+
+<div class="conten_titulo">
+<h1 class="titulo_lista">Lista de Empleados</h1>
+
+<a href="{% url 'upload_file' %}" class="btn_modal">Cargar Masivos</a>
+
+
+</div>
+<div class="conten_busqueda">
+<a href="{% url 'crear_empleado' %}" class="registrar">Registrar Empleado</a>
+
+
+<!-- <form action="" method="get" class="form_buscar">
+
+    
+    <input type="text" name="area_buscar" placeholder="Buscar" value="{{valor_buscado}}" class="txt_buscar">
+    <input type="submit" value="buscar" class="btn_buscar">
+
+</form> -->
+
+
+</div>
+
+<table border>
+    <tr>
+        
+    </tr>
+
+    {% for Empleado in object_empleados %}
+
+    <tr>
+        <td>{{Empleado.Nombre}}</td>
+        <td>{{Empleado.Apellido}}</td>
+        <td>{{Empleado.Email}}</td>
+        <td>{{Empleado.Edad}}</td>
+        <td>{{Empleado.Generos}}</td>
+        <td>{{Empleado.Salario}}</td>
+
+
+      
+        <td><a href="{% url 'editar-empleado' Empleado.id %}" id="btn_editar">editar</a><a id="btn_eliminar" href="{% url 'eliminar-empleado' Empleado.id %}">eliminar</a></td>
+        
+    </tr>
+
+    {% empty %}
+    <h3>no hay elementos en esta lista </h3>
+
+    {%endfor%}
+
+   
+   
+</table>
+
+
+
+
+{% endblock content %}
+
+
+

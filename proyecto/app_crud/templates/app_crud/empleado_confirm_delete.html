@@ -1,0 +1,23 @@
+
+
+{% extends 'app_crud/principal.html' %}
+
+{% block content %}
+
+
+<a href="{% url 'listaEmpleados' %}" class="volver_delete">volver</a>
+<div class="contend_delete">
+
+<form action="" method="post">
+    {% csrf_token %}
+
+    <p>Vas a Eliminar al Empleado: "{{deleteEmpleados.Nombre}}"</p>
+    <input type="submit" value="Eliminar" class="btn_form">
+
+</form>
+
+</div>
+
+{% endblock content %}
+
+

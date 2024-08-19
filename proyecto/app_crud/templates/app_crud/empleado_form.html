@@ -1,0 +1,21 @@
+
+{% extends 'app_crud/principal.html' %}
+
+{% block content %}
+<div class="contenedor_fomulario">
+    <a href="{% url 'listaEmpleados' %}" class="volver">volver</a>
+<div class="border_form">
+<h1>Registro de Empleados</h1>
+
+
+<form method="post" action="">
+    {% csrf_token %}
+    {{form.as_p}}
+
+    <input type="submit" value="Enviar" class="btn_form">
+
+</form>
+</div>
+</div>
+{% endblock content %}
+

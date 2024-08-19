@@ -1,0 +1,25 @@
+
+{% extends 'app_crud/principal.html' %}
+
+{% block content %}
+
+
+
+<div class="conten_for_excel">
+<a href="{% url 'listaEmpleados' %}" class="volver">volver</a>
+<h2>Subir archivo Excel</h2>
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit"class="btn_form">Subir</button>
+</form>
+</div>
+
+
+
+
+{% endblock content %}
+
+
+
+
