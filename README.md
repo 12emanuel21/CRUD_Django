@@ -10,3 +10,9 @@ pandas <br>
 Pillow <br>
 asgiref <br>
 
+"""  
+que no se me olvide migrar la base con python manage.py migrate
+
+
+"""
+
